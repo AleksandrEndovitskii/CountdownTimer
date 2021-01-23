@@ -6,7 +6,7 @@ using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Components
+namespace Components.Buttons
 {
     public class ButtonsShowingAnimationComponent : MonoBehaviour
     {
