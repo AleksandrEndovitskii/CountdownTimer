@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1323712409368137095}
   - component: {fileID: 17458244296837107}
-  - component: {fileID: 2713101069192898570}
   - component: {fileID: 5478302173596473377}
+  - component: {fileID: 8610889768360183121}
   m_Layer: 5
   m_Name: ButtonsWindows
   m_TagString: Untagged
@@ -48,20 +48,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6297096414174400787}
   m_CullTransparentMesh: 1
---- !u!114 &2713101069192898570
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6297096414174400787}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_HorizontalFit: 2
-  m_VerticalFit: 2
 --- !u!114 &5478302173596473377
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -82,6 +68,20 @@ MonoBehaviour:
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
+--- !u!114 &8610889768360183121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6297096414174400787}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86710e43de46f6f4bac7c8e50813a599, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AspectMode: 2
+  m_AspectRatio: 1
 --- !u!1001 &5065264501515979245
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -283,10 +283,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1323712409368137095}
     m_Modifications:
-    - target: {fileID: 3479279307990920271, guid: baee6a096c59b574a899da599b21dd2b, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 56ada3277375a2c42b8665c0c08b5282, type: 3}
     - target: {fileID: 7351444215194130208, guid: baee6a096c59b574a899da599b21dd2b, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -392,6 +388,10 @@ PrefabInstance:
     - target: {fileID: 1084975839930199731, guid: 87de5e98a3f7bd8428edb6f11f1d23af, type: 3}
       propertyPath: m_Name
       value: VerticalContainer
+      objectReference: {fileID: 0}
+    - target: {fileID: 3909838150410084562, guid: 87de5e98a3f7bd8428edb6f11f1d23af, type: 3}
+      propertyPath: m_Padding.m_Left
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 4400418192160827237, guid: 87de5e98a3f7bd8428edb6f11f1d23af, type: 3}
       propertyPath: m_RootOrder
