@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 3909838150410084562}
   - component: {fileID: 1469690682376253142}
   - component: {fileID: 5726012942497919524}
+  - component: {fileID: 5313383627592202162}
+  - component: {fileID: 8868015321418560988}
   m_Layer: 5
   m_Name: VerticalContainer
   m_TagString: Untagged
@@ -45,7 +47,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1084975839930199731}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 59f8146938fff824cb5fd77236b75775, type: 3}
   m_Name: 
@@ -98,3 +100,31 @@ MonoBehaviour:
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
+--- !u!114 &5313383627592202162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1084975839930199731}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9aacd894e4628744a909f9e755fc8077, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _delayFramesCount: 1
+--- !u!114 &8868015321418560988
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1084975839930199731}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8b0d51e254201246bb7a8d296b0fb1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _dOTweenAnimationId: ShowingAnimation
+  _stepBetweenAnimationsPlayingSecondsCount: 1
+  _doTweenAnimations: []
