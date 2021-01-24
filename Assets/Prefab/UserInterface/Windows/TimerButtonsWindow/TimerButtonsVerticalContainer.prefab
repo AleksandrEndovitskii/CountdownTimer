@@ -14,8 +14,9 @@ GameObject:
   - component: {fileID: 5726012942497919524}
   - component: {fileID: 5313383627592202162}
   - component: {fileID: 8868015321418560988}
+  - component: {fileID: 3380995551069353988}
   m_Layer: 5
-  m_Name: VerticalContainer
+  m_Name: TimerButtonsVerticalContainer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -125,6 +126,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8b0d51e254201246bb7a8d296b0fb1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _dOTweenAnimationId: ShowingAnimation
   _stepBetweenAnimationsPlayingSecondsCount: 1
-  _doTweenAnimations: []
+  _buttons: []
+--- !u!114 &3380995551069353988
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1084975839930199731}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49beb5cf1642c69489f8114aab9cc3b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _timerButtonViewPrefab: {fileID: 6555950264447975951, guid: e156b0224a51d0949ae01fa5d479bbf4, type: 3}
