@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &2500216215499016956
+--- !u!114 &-2947576986989144685
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9,9 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 218899923076196779}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2ade57c9f352dcf40b22ee4350053436, type: 3}
+  m_Script: {fileID: 11500000, guid: 4f585146df10e1a4c848ca448414574e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _timerWindowView: {fileID: 0}
+  _stepSecondsCount: -1
 --- !u!1001 &5710983258062347931
 PrefabInstance:
   m_ObjectHideFlags: 0

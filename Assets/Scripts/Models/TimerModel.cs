@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Collections;
+using Managers;
+using UnityEngine;
 
 namespace Models
 {
@@ -27,9 +30,34 @@ namespace Models
 
         private TimeSpan _timeSpan;
 
+        private int _stepSecondsCount = 1;
+
+        private bool _isStarted = false;
+
         public TimerModel(TimeSpan timeSpan)
         {
             TimeSpan = timeSpan;
+        }
+
+        public void StartTimer()
+        {
+            if (_isStarted)
+            {
+                return;
+            }
+
+            GameManager.Instance.StartCoroutine(SecondCounting());
+        }
+
+        private IEnumerator SecondCounting()
+        {
+            while (true)
+            {
+                yield return new WaitForSeconds(_stepSecondsCount);
+
+                var timeSpan = TimeSpan.FromSeconds(_stepSecondsCount);
+                TimeSpan -= timeSpan;
+            }
         }
     }
 }

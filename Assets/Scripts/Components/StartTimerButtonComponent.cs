@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.UI;
 using Views;
@@ -6,13 +5,10 @@ using Views;
 namespace Components
 {
     [RequireComponent(typeof(Button))]
-    public class AddTimeToTimerButtonComponent : MonoBehaviour
+    public class StartTimerButtonComponent : MonoBehaviour
     {
         [SerializeField]
         private TimerWindowView _timerWindowView;
-
-        [SerializeField]
-        private int _stepSecondsCount;
 
         private Button _button;
 
@@ -31,8 +27,7 @@ namespace Components
 
         private void ButtonOnClick()
         {
-            var timeSpan = new TimeSpan(0, 0, _stepSecondsCount);
-            _timerWindowView.TimerModel.TimeSpan += timeSpan;
+            _timerWindowView.TimerModel.StartTimer();
         }
     }
 }

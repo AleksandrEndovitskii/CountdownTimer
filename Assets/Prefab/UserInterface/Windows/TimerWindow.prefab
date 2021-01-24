@@ -236,6 +236,10 @@ PrefabInstance:
       propertyPath: m_fontSize
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 1146687818870532673, guid: 1fc548a0156b6c946ac132c29c99b18c, type: 3}
+      propertyPath: _timerWindowView
+      value: 
+      objectReference: {fileID: 9082169304298858950}
     - target: {fileID: 1243640020516236972, guid: 1fc548a0156b6c946ac132c29c99b18c, type: 3}
       propertyPath: m_SizeDelta.x
       value: 0
@@ -352,6 +356,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: 400
       objectReference: {fileID: 0}
+    - target: {fileID: 1772961203670841279, guid: 1fc548a0156b6c946ac132c29c99b18c, type: 3}
+      propertyPath: _timerWindowView
+      value: 
+      objectReference: {fileID: 9082169304298858950}
     - target: {fileID: 2529811022695312811, guid: 1fc548a0156b6c946ac132c29c99b18c, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -480,6 +488,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LeftRightMiddleBackgroundImage
       objectReference: {fileID: 0}
+    - target: {fileID: 5053542857060736222, guid: 1fc548a0156b6c946ac132c29c99b18c, type: 3}
+      propertyPath: _timerWindowView
+      value: 
+      objectReference: {fileID: 9082169304298858950}
     - target: {fileID: 6841273658504895894, guid: 1fc548a0156b6c946ac132c29c99b18c, type: 3}
       propertyPath: m_Name
       value: TimerContentConteiner
