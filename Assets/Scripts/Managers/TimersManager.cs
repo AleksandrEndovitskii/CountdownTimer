@@ -27,7 +27,7 @@ namespace Managers
         {
             for (var i = 0; i < _timersCount; i++)
             {
-                var timerModel = new TimerModel(new TimeSpan(0, i, 0));
+                var timerModel = new TimerModel(new TimeSpan(0, i + 1, 0));
                 TimerModels.Add(timerModel);
             }
 
