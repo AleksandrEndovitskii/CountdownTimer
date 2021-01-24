@@ -24,15 +24,22 @@ namespace Models
 
                 _timeSpan = value;
 
+                if (_timeSpan == TimeSpan.Zero)
+                {
+                    StopTimer();
+                }
+
                 TimeSpanChanged.Invoke(_timeSpan);
             }
         }
+
+        public bool IsStarted => _secondCountingCoroutine != null;
 
         private TimeSpan _timeSpan;
 
         private int _stepSecondsCount = 1;
 
-        private bool _isStarted = false;
+        private Coroutine _secondCountingCoroutine;
 
         public TimerModel(TimeSpan timeSpan)
         {
@@ -41,14 +48,20 @@ namespace Models
 
         public void StartTimer()
         {
-            if (_isStarted)
+            if (IsStarted)
             {
                 return;
             }
 
-            _isStarted = true;
+            Debug.Log("Timer started");
 
-            GameManager.Instance.StartCoroutine(SecondCounting());
+            _secondCountingCoroutine = GameManager.Instance.StartCoroutine(SecondCounting());
+        }
+        public void StopTimer()
+        {
+            Debug.Log("Timer stopped");
+
+            GameManager.Instance.StopCoroutine(_secondCountingCoroutine);
         }
 
         private IEnumerator SecondCounting()
