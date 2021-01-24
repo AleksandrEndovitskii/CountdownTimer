@@ -2,7 +2,7 @@ using System;
 using Models;
 using UnityEngine;
 
-namespace Components.Timer
+namespace Views
 {
     public class TimerButtonView : MonoBehaviour
     {

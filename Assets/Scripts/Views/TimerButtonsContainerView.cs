@@ -3,7 +3,7 @@ using Managers;
 using Models;
 using UnityEngine;
 
-namespace Components.Timer
+namespace Views
 {
     public class TimerButtonsContainerView : MonoBehaviour
     {
