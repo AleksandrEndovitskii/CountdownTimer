@@ -464,6 +464,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -101
       objectReference: {fileID: 0}
+    - target: {fileID: 3714164892124152753, guid: 1fc548a0156b6c946ac132c29c99b18c, type: 3}
+      propertyPath: _timerWindowView
+      value: 
+      objectReference: {fileID: 9082169304298858950}
     - target: {fileID: 3754821241732750557, guid: 1fc548a0156b6c946ac132c29c99b18c, type: 3}
       propertyPath: m_Type
       value: 0
@@ -501,6 +505,10 @@ PrefabInstance:
       value: 101
       objectReference: {fileID: 0}
     - target: {fileID: 7126594495099214096, guid: 1fc548a0156b6c946ac132c29c99b18c, type: 3}
+      propertyPath: _timerWindowView
+      value: 
+      objectReference: {fileID: 9082169304298858950}
+    - target: {fileID: 7551101698330668412, guid: 1fc548a0156b6c946ac132c29c99b18c, type: 3}
       propertyPath: _timerWindowView
       value: 
       objectReference: {fileID: 9082169304298858950}
