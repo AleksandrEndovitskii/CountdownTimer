@@ -46,6 +46,8 @@ namespace Models
                 return;
             }
 
+            _isStarted = true;
+
             GameManager.Instance.StartCoroutine(SecondCounting());
         }
 
