@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 2412398573003341809}
   - component: {fileID: 6928905182033117342}
   - component: {fileID: 580543595641091650}
-  - component: {fileID: 7456384573995461960}
   m_Layer: 5
   m_Name: HorzontalButtonsContainer
   m_TagString: Untagged
@@ -81,20 +80,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_HorizontalFit: 2
   m_VerticalFit: 2
---- !u!114 &7456384573995461960
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1397656814304622119}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c8b0d51e254201246bb7a8d296b0fb1a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _stepBetweenAnimationsPlayingSecondsCount: 1
-  _buttons: []
 --- !u!1001 &2282611528013628742
 PrefabInstance:
   m_ObjectHideFlags: 0
