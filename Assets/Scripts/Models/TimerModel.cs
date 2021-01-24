@@ -7,6 +7,7 @@ namespace Models
 {
     public class TimerModel
     {
+        public Action<bool> IsStartedChanged = delegate {  };
         public Action<TimeSpan> TimeSpanChanged = delegate {  };
 
         public TimeSpan TimeSpan
@@ -26,14 +27,48 @@ namespace Models
 
                 if (_timeSpan == TimeSpan.Zero)
                 {
-                    StopTimer();
+                    IsStarted = false;
                 }
 
                 TimeSpanChanged.Invoke(_timeSpan);
             }
         }
 
-        public bool IsStarted => _secondCountingCoroutine != null;
+        public bool IsStarted
+        {
+            get
+            {
+                return _secondCountingCoroutine != null;
+            }
+            set
+            {
+                if (value == true)
+                {
+                    if (IsStarted)
+                    {
+                        return;
+                    }
+
+                    _secondCountingCoroutine = GameManager.Instance.StartCoroutine(SecondCounting());
+
+                    Debug.Log("Timer started");
+                    IsStartedChanged.Invoke(IsStarted);
+                }
+                else
+                {
+                    if (!IsStarted)
+                    {
+                        return;
+                    }
+
+                    GameManager.Instance.StopCoroutine(_secondCountingCoroutine);
+                    _secondCountingCoroutine = null;
+
+                    Debug.Log("Timer stopped");
+                    IsStartedChanged.Invoke(IsStarted);
+                }
+            }
+        }
 
         private TimeSpan _timeSpan;
 
@@ -44,24 +79,6 @@ namespace Models
         public TimerModel(TimeSpan timeSpan)
         {
             TimeSpan = timeSpan;
-        }
-
-        public void StartTimer()
-        {
-            if (IsStarted)
-            {
-                return;
-            }
-
-            Debug.Log("Timer started");
-
-            _secondCountingCoroutine = GameManager.Instance.StartCoroutine(SecondCounting());
-        }
-        public void StopTimer()
-        {
-            Debug.Log("Timer stopped");
-
-            GameManager.Instance.StopCoroutine(_secondCountingCoroutine);
         }
 
         private IEnumerator SecondCounting()

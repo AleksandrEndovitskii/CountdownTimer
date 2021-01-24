@@ -27,7 +27,7 @@ namespace Components
 
         private void ButtonOnClick()
         {
-            _timerWindowView.TimerModel.StartTimer();
+            _timerWindowView.TimerModel.IsStarted = true;
         }
     }
 }
