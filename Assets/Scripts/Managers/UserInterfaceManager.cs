@@ -23,7 +23,6 @@ namespace Managers
 
             _buttonsWindowsInstance = Instantiate(_buttonsWindowsPrefab, _userInterfaceCanvasInstance.gameObject.transform);
         }
-
         public void UnInitialize()
         {
 
