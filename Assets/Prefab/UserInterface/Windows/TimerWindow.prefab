@@ -500,6 +500,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 101
       objectReference: {fileID: 0}
+    - target: {fileID: 7126594495099214096, guid: 1fc548a0156b6c946ac132c29c99b18c, type: 3}
+      propertyPath: _timerWindowView
+      value: 
+      objectReference: {fileID: 9082169304298858950}
     - target: {fileID: 7589953119647191161, guid: 1fc548a0156b6c946ac132c29c99b18c, type: 3}
       propertyPath: m_Name
       value: RightBotBackgroundImage
