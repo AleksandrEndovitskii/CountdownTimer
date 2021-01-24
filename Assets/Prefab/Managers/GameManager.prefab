@@ -59,6 +59,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _userInterfaceCanvasPrefab: {fileID: 8840406798762767464, guid: 43c5b10339a7b2943b7c65a041a31185, type: 3}
   _buttonsWindowsPrefab: {fileID: 1323712409368137095, guid: 51a38f836afaae249ad78e3a36b43f34, type: 3}
+  _timerWindowViewPrefab: {fileID: 9082169304298858950, guid: be544b42564ebf248929d751cd9cbccb, type: 3}
 --- !u!114 &5623005236699265716
 MonoBehaviour:
   m_ObjectHideFlags: 0

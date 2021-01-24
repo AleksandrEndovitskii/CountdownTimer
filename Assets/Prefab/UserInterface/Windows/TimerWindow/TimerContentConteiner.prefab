@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 1505939586191820313}
   - component: {fileID: 2510550716295838079}
   - component: {fileID: 8835740584788705398}
-  - component: {fileID: -6602771853786101882}
   m_Layer: 5
   m_Name: TimerContentConteiner
   m_TagString: Untagged
@@ -75,19 +74,6 @@ MonoBehaviour:
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
---- !u!114 &-6602771853786101882
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6841273658504895894}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 49beb5cf1642c69489f8114aab9cc3b2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _timerButtonViewInstances: []
 --- !u!1001 &3474742320238268765
 PrefabInstance:
   m_ObjectHideFlags: 0

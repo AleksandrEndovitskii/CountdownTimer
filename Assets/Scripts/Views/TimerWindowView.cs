@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Views
 {
-    public class TimerButtonView : MonoBehaviour
+    public class TimerWindowView : MonoBehaviour
     {
         public Action<TimerModel> TimerModelChanged = delegate { };
 

@@ -1,5 +1,7 @@
+using Models;
 using UnityEngine;
 using Utils;
+using Views;
 
 namespace Managers
 {
@@ -9,6 +11,8 @@ namespace Managers
         private Canvas _userInterfaceCanvasPrefab;
         [SerializeField]
         private RectTransform _buttonsWindowsPrefab;
+        [SerializeField]
+        private TimerWindowView _timerWindowViewPrefab;
 
         private Canvas _userInterfaceCanvasInstance;
         private RectTransform _buttonsWindowsInstance;
@@ -23,6 +27,12 @@ namespace Managers
         public void UnInitialize()
         {
 
+        }
+
+        public void ShowTimerWindow(TimerModel timerModel)
+        {
+            var timerWindowViewInstance = Instantiate(_timerWindowViewPrefab, _userInterfaceCanvasInstance.gameObject.transform);
+            timerWindowViewInstance.SetModel(timerModel);
         }
     }
 }
