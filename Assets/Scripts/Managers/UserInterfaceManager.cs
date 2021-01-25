@@ -10,28 +10,44 @@ namespace Managers
         [SerializeField]
         private Canvas _userInterfaceCanvasPrefab;
         [SerializeField]
-        private RectTransform _buttonsWindowsPrefab;
+        private RectTransform _timerButtonsWindowPrefab;
         [SerializeField]
         private TimerWindowView _timerWindowViewPrefab;
 
         private Canvas _userInterfaceCanvasInstance;
-        private RectTransform _buttonsWindowsInstance;
+        private RectTransform _currentWindowInstance;
 
         public void Initialize()
         {
             _userInterfaceCanvasInstance = Instantiate(_userInterfaceCanvasPrefab);
-
-            _buttonsWindowsInstance = Instantiate(_buttonsWindowsPrefab, _userInterfaceCanvasInstance.gameObject.transform);
         }
         public void UnInitialize()
         {
 
         }
 
+        public void ShowTimerButtonsWindow()
+        {
+            CloseCurrentWindow();
+
+            _currentWindowInstance = Instantiate(_timerButtonsWindowPrefab, _userInterfaceCanvasInstance.gameObject.transform);
+        }
         public void ShowTimerWindow(TimerModel timerModel)
         {
+            CloseCurrentWindow();
+
             var timerWindowViewInstance = Instantiate(_timerWindowViewPrefab, _userInterfaceCanvasInstance.gameObject.transform);
             timerWindowViewInstance.SetModel(timerModel);
+
+            _currentWindowInstance = timerWindowViewInstance.gameObject.GetComponent<RectTransform>();
+        }
+        public void CloseCurrentWindow()
+        {
+            if (_currentWindowInstance != null)
+            {
+                Destroy(_currentWindowInstance.gameObject);
+            }
+            _currentWindowInstance = null;
         }
     }
 }

@@ -7,7 +7,7 @@ namespace Components.Buttons
 {
     [RequireComponent(typeof(Button))]
     [RequireComponent(typeof(TimerButtonView))]
-    public class InstantiateTimerWindowViewButtonComponent : MonoBehaviour
+    public class ShowTimerWindowButtonComponent : MonoBehaviour
     {
         private Button _button;
         private TimerButtonView _timerButtonView;

@@ -29,6 +29,9 @@ namespace Managers
             }
 
             Initialize();
+
+            // start of game flow
+            UserInterfaceManager.ShowTimerButtonsWindow();
         }
         private void OnDestroy()
         {

@@ -140,19 +140,7 @@ MonoBehaviour:
       m_Calls: []
   onComplete:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 3190267338324838350}
-        m_TargetAssemblyTypeName: Components.DestroyGameObjectComponent, Assembly-CSharp
-        m_MethodName: Destroy
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   onTweenCreated:
     m_PersistentCalls:
       m_Calls: []
@@ -233,7 +221,6 @@ GameObject:
   - component: {fileID: 1323712409368137095}
   - component: {fileID: 17458244296837107}
   - component: {fileID: 9082169304298858950}
-  - component: {fileID: 3190267338324838350}
   m_Layer: 5
   m_Name: TimerWindow
   m_TagString: Untagged
@@ -280,18 +267,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 250aa34d63d546b688730e1ff2a25adc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &3190267338324838350
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6297096414174400787}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b12c906a441c1d41b6e4a94352defa3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &3624162178654504517
@@ -895,6 +870,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TopBotMiddleBackgroundImage
       objectReference: {fileID: 0}
+    - target: {fileID: 8995737849303760925, guid: 1fc548a0156b6c946ac132c29c99b18c, type: 3}
+      propertyPath: _targetGameObject
+      value: 
+      objectReference: {fileID: 1845364514749252607}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1fc548a0156b6c946ac132c29c99b18c, type: 3}
 --- !u!1 &1845364514749252607 stripped

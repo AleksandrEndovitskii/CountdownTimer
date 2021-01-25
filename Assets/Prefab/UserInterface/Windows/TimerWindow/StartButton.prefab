@@ -13,6 +13,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _timerWindowView: {fileID: 0}
+--- !u!114 &7620650350453209683
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8560149956537981285}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9104be233749e8c4797d3f8d25b06ef1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _animationId: HidingAnimation
+  _targetGameObject: {fileID: 0}
 --- !u!1001 &4216229455939956309
 PrefabInstance:
   m_ObjectHideFlags: 0
