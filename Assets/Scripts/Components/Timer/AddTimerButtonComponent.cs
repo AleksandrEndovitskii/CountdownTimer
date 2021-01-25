@@ -1,20 +1,25 @@
+using System;
+using Managers;
+using Models;
 using UnityEngine;
 using UnityEngine.UI;
-using Views;
 
-namespace Components
+namespace Components.Timer
 {
     [RequireComponent(typeof(Button))]
-    public class StartTimerButtonComponent : MonoBehaviour
+    public class AddTimerButtonComponent : MonoBehaviour
     {
         [SerializeField]
-        private TimerWindowView _timerWindowView;
+        private int _secondsCount;
 
         private Button _button;
+        private TimersManager _timersManager;
 
         private void Awake()
         {
             _button = gameObject.GetComponent<Button>();
+
+            _timersManager = GameManager.Instance.TimersManager;
         }
         private void Start()
         {
@@ -27,7 +32,9 @@ namespace Components
 
         private void ButtonOnClick()
         {
-            _timerWindowView.TimerModel.IsStarted = true;
+            var timeSpan = TimeSpan.FromSeconds(_secondsCount);
+            var timerModel = new TimerModel(timeSpan);
+            _timersManager.Add(timerModel);
         }
     }
 }

@@ -3,7 +3,7 @@ using TMPro;
 using UnityEngine;
 using Views;
 
-namespace Components
+namespace Components.Timer
 {
     [RequireComponent(typeof(TextMeshProUGUI))]
     public class TimerTextComponent : MonoBehaviour

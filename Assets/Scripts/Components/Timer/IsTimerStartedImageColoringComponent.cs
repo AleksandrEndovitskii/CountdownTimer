@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using Views;
 
-namespace Components
+namespace Components.Timer
 {
     [RequireComponent(typeof(Image))]
     public class IsTimerStartedImageColoringComponent : MonoBehaviour

@@ -2,7 +2,7 @@ using DG.Tweening;
 using UnityEngine;
 using Views;
 
-namespace Components
+namespace Components.Timer
 {
     [RequireComponent(typeof(DOTweenAnimation))]
     public class IsTimerStartedChangedAnimationPlayingComponent : MonoBehaviour
