@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: 6637228383509849893}
   - component: {fileID: 8426007474944102201}
   - component: {fileID: 6555950264447975951}
-  - component: {fileID: 175100273180699082}
   - component: {fileID: 3730559838681601397}
   - component: {fileID: 7860677972840486196}
+  - component: {fileID: -4791259380427575774}
   m_Layer: 5
   m_Name: TimerButton
   m_TagString: Untagged
@@ -143,18 +143,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 454346b6793c8d945b40e8b12467a51d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &175100273180699082
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5496869097869375280}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 77891c32403744759f1018bbdb953b2f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &3730559838681601397
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -273,6 +261,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _timerButtonView: {fileID: 6555950264447975951}
+--- !u!114 &-4791259380427575774
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5496869097869375280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a7379894540f1e438eea1772e89718c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _animationId: HidingAnimation
 --- !u!114 &166218089785484971
 MonoBehaviour:
   m_ObjectHideFlags: 0
