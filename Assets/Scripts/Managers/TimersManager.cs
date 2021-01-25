@@ -8,7 +8,7 @@ namespace Managers
 {
     public class TimersManager : MonoBehaviour, IInitilizable, IUnInitializeble
     {
-        public Action<List<TimerModel>> TimerModelsChanged = delegate { };
+        public Action<TimerModel> TimerModelAdded = delegate { };
 
         public List<TimerModel> TimerModels = new List<TimerModel>();
 
@@ -27,7 +27,7 @@ namespace Managers
         {
             TimerModels.Add(timerModel);
 
-            TimerModelsChanged.Invoke(TimerModels);
+            TimerModelAdded.Invoke(timerModel);
         }
 
         private void CreateDemoTimerModels()

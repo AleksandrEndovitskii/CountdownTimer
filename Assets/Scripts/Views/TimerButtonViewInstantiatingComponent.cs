@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using System.Linq;
 using Managers;
 using Models;
 using UnityEngine;
@@ -25,42 +24,35 @@ namespace Views
         }
         private void Start()
         {
-            _timersManager.TimerModelsChanged += OnTimerModelsChanged;
-            OnTimerModelsChanged(_timersManager.TimerModels);
+            _timersManager.TimerModelAdded += OnTimerModelAdded;
+            foreach (var timerModel in _timersManager.TimerModels)
+            {
+                OnTimerModelAdded(timerModel);
+            }
         }
         private void OnDestroy()
         {
-            _timersManager.TimerModelsChanged -= OnTimerModelsChanged;
+            _timersManager.TimerModelAdded -= OnTimerModelAdded;
         }
 
-        private void OnTimerModelsChanged(List<TimerModel> timerModels)
+        private void OnTimerModelAdded(TimerModel timerModel)
         {
-            ClearContent();
-            CreateContent();
+            AddElement(timerModel);
         }
 
-        private void ClearContent()
+        private void AddElement(TimerModel timerModel)
         {
-            foreach (var timerButtonViewInstance in _timerButtonViewInstances)
-            {
-                Destroy(timerButtonViewInstance.gameObject);
-            }
-            _timerButtonViewInstances.Clear();
-
-            _customVerticalLayoutGroupView.ClearContent();
+            var timerButtonViewInstance = InstantiateElement(timerModel);
+            _timerButtonViewInstances.Add(timerButtonViewInstance);
+            _customVerticalLayoutGroupView.AddElement(
+                timerButtonViewInstance.gameObject.GetComponent<RectTransform>());
         }
-        private void CreateContent()
-        {
-            foreach (var timerModel in _timersManager.TimerModels)
-            {
-                var timerButtonViewInstance = Instantiate(_timerButtonViewPrefab);
-                timerButtonViewInstance.SetModel(timerModel);
-                _timerButtonViewInstances.Add(timerButtonViewInstance);
-            }
 
-            var rectTransforms = _timerButtonViewInstances
-                .Select(x => x.gameObject.GetComponent<RectTransform>()).ToList();
-            _customVerticalLayoutGroupView.CreateContent(rectTransforms);
+        private TimerButtonView InstantiateElement(TimerModel timerModel)
+        {
+            var timerButtonViewInstance = Instantiate(_timerButtonViewPrefab);
+            timerButtonViewInstance.SetModel(timerModel);
+            return timerButtonViewInstance;
         }
     }
 }

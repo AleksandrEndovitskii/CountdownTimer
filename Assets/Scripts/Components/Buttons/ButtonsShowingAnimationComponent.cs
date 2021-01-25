@@ -1,6 +1,5 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
@@ -12,11 +11,11 @@ namespace Components.Buttons
     public class ButtonsShowingAnimationComponent : MonoBehaviour
     {
         [SerializeField]
-        private int _stepBetweenAnimationsPlayingSecondsCount;
+        private int _stepBetweenAnimationsPlayingSecondsCount = 1;
 
         private CustomVerticalLayoutGroupView _customVerticalLayoutGroupView;
 
-        private List<Coroutine> _coroutines = new List<Coroutine>();
+        private DateTime _lastAnimationStartDateTime = DateTime.MinValue;
 
         private void Awake()
         {
@@ -24,61 +23,60 @@ namespace Components.Buttons
         }
         private void Start()
         {
-            _customVerticalLayoutGroupView.ContentChanged += OnLayoutChanged;
-            OnLayoutChanged(_customVerticalLayoutGroupView.Content);
+            _customVerticalLayoutGroupView.ElementAdded += OnElementAdded;
+            foreach (var rectTransform in _customVerticalLayoutGroupView.Content)
+            {
+                OnElementAdded(rectTransform);
+            }
         }
         private void OnDestroy()
         {
-            _customVerticalLayoutGroupView.ContentChanged -= OnLayoutChanged;
+            _customVerticalLayoutGroupView.ElementAdded -= OnElementAdded;
         }
 
-        private void StopAnimations()
+        private void OnElementAdded(RectTransform rectTransform)
         {
-            foreach (var coroutine in _coroutines)
+            StartAnimation(rectTransform);
+        }
+
+        private Coroutine StartAnimation(RectTransform rectTransform)
+        {
+            var initialAnchoredPositionX = rectTransform.anchoredPosition.x;
+
+            var layoutElement = rectTransform.gameObject.GetComponent<LayoutElement>();
+            rectTransform.anchoredPosition = new Vector2(0 - layoutElement.preferredWidth,
+                rectTransform.anchoredPosition.y);
+
+            if (_lastAnimationStartDateTime == DateTime.MinValue)
             {
-                StopCoroutine(coroutine);
+                _lastAnimationStartDateTime = DateTime.Now.AddSeconds(-1);
             }
-            _coroutines.Clear();
-        }
-        private void StartAnimations(List<RectTransform> rectTransforms)
-        {
-            for (var i = 0; i < rectTransforms.Count; i++)
+            var fromLastAnimationStartSecondsCount = Math.Abs((float)(DateTime.Now - _lastAnimationStartDateTime).TotalSeconds);
+            if (fromLastAnimationStartSecondsCount < _stepBetweenAnimationsPlayingSecondsCount)
             {
-                var rectTransform = rectTransforms[i];
-
-                var initialAnchoredPositionX = rectTransform.anchoredPosition.x;
-
-                var layoutElement = rectTransform.gameObject.GetComponent<LayoutElement>();
-                rectTransform.anchoredPosition = new Vector2(0 - layoutElement.preferredWidth,
-                    rectTransform.anchoredPosition.y);
-
-                var performActionAfterDelaySecondsCountCoroutine = StartCoroutine(
-                    PerformActionAfterDelaySecondsCountCoroutine(
-                        i * _stepBetweenAnimationsPlayingSecondsCount,
-                        () =>
-                        {
-                            rectTransform.DOLocalMoveX(
-                                initialAnchoredPositionX, _stepBetweenAnimationsPlayingSecondsCount);
-                        }));
-                _coroutines.Add(performActionAfterDelaySecondsCountCoroutine);
+                _lastAnimationStartDateTime = _lastAnimationStartDateTime.AddSeconds(
+                    _stepBetweenAnimationsPlayingSecondsCount);
             }
+            else
+            {
+                _lastAnimationStartDateTime = DateTime.Now;
+            }
+
+            var animationStartDelaySecondsCount = Math.Abs((float)(DateTime.Now - _lastAnimationStartDateTime).TotalSeconds);
+            var performActionAfterDelaySecondsCountCoroutine = StartCoroutine(
+                PerformActionAfterDelaySecondsCountCoroutine(animationStartDelaySecondsCount,
+                    () =>
+                    {
+                        rectTransform.DOLocalMoveX(
+                            initialAnchoredPositionX, _stepBetweenAnimationsPlayingSecondsCount);
+                    }));
+
+            return performActionAfterDelaySecondsCountCoroutine;
         }
 
-        private void OnLayoutChanged(List<RectTransform> rectTransforms)
-        {
-            StopAnimations();
-            StartAnimations(rectTransforms);
-        }
-
-        private IEnumerator PerformActionAfterDelaySecondsCountCoroutine(int delaySecondsCount, Action action)
+        private IEnumerator PerformActionAfterDelaySecondsCountCoroutine(float delaySecondsCount, Action action)
         {
             yield return new WaitForSeconds(delaySecondsCount);
-
-            action?.Invoke();
-        }
-        private IEnumerator PerformActionAfterDelayFramesCountCoroutine(int delayFramesCount, Action action)
-        {
-            yield return new WaitForFrames(delayFramesCount);
 
             action?.Invoke();
         }

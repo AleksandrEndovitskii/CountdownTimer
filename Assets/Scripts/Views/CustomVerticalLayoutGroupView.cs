@@ -8,26 +8,9 @@ namespace Views
     [RequireComponent(typeof(VerticalLayoutGroup))]
     public class CustomVerticalLayoutGroupView : MonoBehaviour
     {
-        public Action<List<RectTransform>> ContentChanged = delegate { };
+        public Action<RectTransform> ElementAdded = delegate { };
 
-        public List<RectTransform> Content
-        {
-            get
-            {
-                return _content;
-            }
-            set
-            {
-                if (value == _content)
-                {
-                    return;
-                }
-
-                _content = value;
-
-                ContentChanged.Invoke(Content);
-            }
-        }
+        public List<RectTransform> Content => _content;
 
         private List<RectTransform> _content = new List<RectTransform>();
 
@@ -40,33 +23,23 @@ namespace Views
             _verticalLayoutGroup = this.gameObject.GetComponent<VerticalLayoutGroup>();
         }
 
-        public void ClearContent()
+        public void AddElement(RectTransform rectTransform)
         {
-            foreach (var rectTransform in Content)
-            {
-                Destroy(rectTransform.gameObject);
-            }
+            rectTransform.gameObject.transform.SetParent(this.gameObject.transform);
 
-            Content.Clear();
-        }
-        public void CreateContent(List<RectTransform> rectTransforms)
-        {
-            for (var i = 0; i < rectTransforms.Count; i++)
-            {
-                rectTransforms[i].gameObject.transform.SetParent(this.gameObject.transform);
+            var layoutElement = rectTransform.gameObject.GetComponent<LayoutElement>();
 
-                var rectTransform = rectTransforms[i].gameObject.GetComponent<RectTransform>();
-                var layoutElement = rectTransforms[i].gameObject.GetComponent<LayoutElement>();
+            var indexOfElement = _content.Count;
 
-                var elementPositionY = -_directionOfElementsInstantiation.y * i * layoutElement.preferredHeight;
-                elementPositionY += -_directionOfElementsInstantiation.y * i * _verticalLayoutGroup.spacing;
+            var elementPositionY = -_directionOfElementsInstantiation.y * indexOfElement * layoutElement.preferredHeight;
+            elementPositionY += -_directionOfElementsInstantiation.y * indexOfElement * _verticalLayoutGroup.spacing;
 
-                elementPositionY += -_directionOfElementsInstantiation.y * _verticalLayoutGroup.padding.top;
+            elementPositionY += -_directionOfElementsInstantiation.y * _verticalLayoutGroup.padding.top;
 
-                rectTransform.anchoredPosition = new Vector2(_verticalLayoutGroup.padding.left, elementPositionY);
-            }
+            rectTransform.anchoredPosition = new Vector2(_verticalLayoutGroup.padding.left, elementPositionY);
 
-            Content = rectTransforms;
+            _content.Add(rectTransform);
+            ElementAdded.Invoke(rectTransform);
         }
     }
 }
