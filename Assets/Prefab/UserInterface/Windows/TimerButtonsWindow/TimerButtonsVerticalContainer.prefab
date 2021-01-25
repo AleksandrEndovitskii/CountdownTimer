@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 3909838150410084562}
   - component: {fileID: 1469690682376253142}
   - component: {fileID: 5726012942497919524}
-  - component: {fileID: 5313383627592202162}
   - component: {fileID: 8868015321418560988}
   - component: {fileID: 3380995551069353988}
   m_Layer: 5
@@ -61,10 +60,10 @@ MonoBehaviour:
   m_ChildAlignment: 0
   m_Spacing: 30
   m_ChildForceExpandWidth: 1
-  m_ChildForceExpandHeight: 1
+  m_ChildForceExpandHeight: 0
   m_ChildControlWidth: 0
   m_ChildControlHeight: 0
-  m_ChildScaleWidth: 1
+  m_ChildScaleWidth: 0
   m_ChildScaleHeight: 1
   m_ReverseArrangement: 0
 --- !u!114 &1469690682376253142
@@ -97,23 +96,10 @@ MonoBehaviour:
   m_MinWidth: -1
   m_MinHeight: -1
   m_PreferredWidth: 1080
-  m_PreferredHeight: 625
+  m_PreferredHeight: -1
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
---- !u!114 &5313383627592202162
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1084975839930199731}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9aacd894e4628744a909f9e755fc8077, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _delayFramesCount: 1
 --- !u!114 &8868015321418560988
 MonoBehaviour:
   m_ObjectHideFlags: 0
