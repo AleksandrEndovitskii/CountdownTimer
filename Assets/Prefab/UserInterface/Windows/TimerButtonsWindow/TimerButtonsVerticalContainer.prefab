@@ -12,8 +12,9 @@ GameObject:
   - component: {fileID: 3909838150410084562}
   - component: {fileID: 1469690682376253142}
   - component: {fileID: 5726012942497919524}
-  - component: {fileID: 8868015321418560988}
   - component: {fileID: 3380995551069353988}
+  - component: {fileID: -2625084769080067712}
+  - component: {fileID: 8868015321418560988}
   m_Layer: 5
   m_Name: TimerButtonsVerticalContainer
   m_TagString: Untagged
@@ -47,24 +48,24 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1084975839930199731}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 59f8146938fff824cb5fd77236b75775, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Padding:
-    m_Left: 35
+    m_Left: 90
     m_Right: 0
     m_Top: 40
     m_Bottom: 0
   m_ChildAlignment: 0
   m_Spacing: 30
   m_ChildForceExpandWidth: 1
-  m_ChildForceExpandHeight: 0
+  m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 0
   m_ChildControlHeight: 0
   m_ChildScaleWidth: 0
-  m_ChildScaleHeight: 1
+  m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
 --- !u!114 &1469690682376253142
 MonoBehaviour:
@@ -73,7 +74,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1084975839930199731}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
   m_Name: 
@@ -87,7 +88,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1084975839930199731}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 306cc8c2b49d7114eaa3623786fc2126, type: 3}
   m_Name: 
@@ -100,6 +101,31 @@ MonoBehaviour:
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
+--- !u!114 &3380995551069353988
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1084975839930199731}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49beb5cf1642c69489f8114aab9cc3b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-2625084769080067712
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1084975839930199731}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f97499b1c075224ca46f14b1d4a41e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _timerButtonViewPrefab: {fileID: 6555950264447975951, guid: e156b0224a51d0949ae01fa5d479bbf4, type: 3}
 --- !u!114 &8868015321418560988
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -113,17 +139,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _stepBetweenAnimationsPlayingSecondsCount: 1
-  _buttons: []
---- !u!114 &3380995551069353988
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1084975839930199731}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 49beb5cf1642c69489f8114aab9cc3b2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _timerButtonViewPrefab: {fileID: 6555950264447975951, guid: e156b0224a51d0949ae01fa5d479bbf4, type: 3}

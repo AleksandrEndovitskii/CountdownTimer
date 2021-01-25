@@ -262,14 +262,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: TimerButtonsVerticalContainer
       objectReference: {fileID: 0}
-    - target: {fileID: 3909838150410084562, guid: 87de5e98a3f7bd8428edb6f11f1d23af, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3909838150410084562, guid: 87de5e98a3f7bd8428edb6f11f1d23af, type: 3}
-      propertyPath: m_Padding.m_Left
-      value: 90
-      objectReference: {fileID: 0}
     - target: {fileID: 4400418192160827237, guid: 87de5e98a3f7bd8428edb6f11f1d23af, type: 3}
       propertyPath: m_RootOrder
       value: 1
