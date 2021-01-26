@@ -840,7 +840,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8169618176394628913, guid: 1fc548a0156b6c946ac132c29c99b18c, type: 3}
       propertyPath: m_Name
-      value: TimerText
+      value: TimerValueText
       objectReference: {fileID: 0}
     - target: {fileID: 8713268147358691392, guid: 1fc548a0156b6c946ac132c29c99b18c, type: 3}
       propertyPath: m_Type

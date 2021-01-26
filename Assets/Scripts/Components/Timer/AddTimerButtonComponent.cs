@@ -1,6 +1,5 @@
 using System;
 using Managers;
-using Models;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -33,8 +32,7 @@ namespace Components.Timer
         private void ButtonOnClick()
         {
             var timeSpan = TimeSpan.FromSeconds(_secondsCount);
-            var timerModel = new TimerModel(timeSpan);
-            _timersManager.Add(timerModel);
+            _timersManager.CreateTimerModel(timeSpan);
         }
     }
 }

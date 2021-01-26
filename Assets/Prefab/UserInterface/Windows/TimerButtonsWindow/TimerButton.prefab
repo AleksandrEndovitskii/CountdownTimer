@@ -273,7 +273,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a7379894540f1e438eea1772e89718c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _animationId: HidingAnimation
+--- !u!114 &878069625308945635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9000308947711595791}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f85e70388ddc0c34e848300ed81d3dbf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _prefix: 'Button '
+  _timerButtonView: {fileID: 6555950264447975951}
 --- !u!114 &166218089785484971
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -545,6 +558,11 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 1168033802878420375, guid: 1f99b10132eff104ab073c1872acbc53, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1f99b10132eff104ab073c1872acbc53, type: 3}
+--- !u!1 &9000308947711595791 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5073876038602855900, guid: 1f99b10132eff104ab073c1872acbc53, type: 3}
+  m_PrefabInstance: {fileID: 4219171441923621075}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &7438530438383752907 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6753000406753728024, guid: 1f99b10132eff104ab073c1872acbc53, type: 3}

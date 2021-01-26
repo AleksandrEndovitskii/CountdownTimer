@@ -30,12 +30,20 @@ namespace Managers
             TimerModelAdded.Invoke(timerModel);
         }
 
+        public void CreateTimerModel(TimeSpan timeSpan)
+        {
+            var id = TimerModels.Count + 1;
+            var timerModel = new TimerModel(id, timeSpan);
+            TimerModels.Add(timerModel);
+
+            TimerModelAdded.Invoke(timerModel);
+        }
         private void CreateDemoTimerModels()
         {
             for (var i = 0; i < _timersCount; i++)
             {
-                var timerModel = new TimerModel(new TimeSpan(0, i + 1, 0));
-                Add(timerModel);
+                var timeSpan = new TimeSpan(0, i + 1, 0);
+                CreateTimerModel(timeSpan);
             }
         }
     }

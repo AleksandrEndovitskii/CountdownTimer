@@ -70,14 +70,17 @@ namespace Models
             }
         }
 
+        public readonly int Id;
+
         private TimeSpan _timeSpan;
 
         private int _stepSecondsCount = 1;
 
         private Coroutine _secondCountingCoroutine;
 
-        public TimerModel(TimeSpan timeSpan)
+        public TimerModel(int id, TimeSpan timeSpan)
         {
+            Id = id;
             TimeSpan = timeSpan;
         }
 
