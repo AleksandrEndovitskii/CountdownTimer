@@ -51,7 +51,7 @@ namespace Models
 
                     _secondCountingCoroutine = GameManager.Instance.StartCoroutine(SecondCounting());
 
-                    Debug.Log("Timer started");
+                    Debug.Log($"Timer wit id [{Id}] started");
                     IsStartedChanged.Invoke(IsStarted);
                 }
                 else
@@ -64,7 +64,7 @@ namespace Models
                     GameManager.Instance.StopCoroutine(_secondCountingCoroutine);
                     _secondCountingCoroutine = null;
 
-                    Debug.Log("Timer stopped");
+                    Debug.Log($"Timer wit id [{Id}] stopped");
                     IsStartedChanged.Invoke(IsStarted);
                 }
             }

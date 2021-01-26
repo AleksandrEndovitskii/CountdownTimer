@@ -34,6 +34,8 @@ namespace Managers
         }
         public void ShowTimerWindow(TimerModel timerModel)
         {
+            Debug.Log($"Timer window has been shown for timer with id [{timerModel.Id}]");
+
             CloseCurrentWindow();
 
             var timerWindowViewInstance = Instantiate(_timerWindowViewPrefab, _userInterfaceCanvasInstance.gameObject.transform);

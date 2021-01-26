@@ -10,7 +10,7 @@ namespace Components.Buttons
     [RequireComponent(typeof(CustomVerticalLayoutGroupView))]
     public class ButtonsHidingAnimationComponent : MonoBehaviour
     {
-        public event Action OnCompleted;
+        public event Action OnCompleted = delegate { };
 
         [SerializeField]
         private int _stepBetweenAnimationsPlayingSecondsCount = 1;
@@ -77,6 +77,8 @@ namespace Components.Buttons
 
             if (_complitedAnimationsCount == _customVerticalLayoutGroupView.Content.Count)
             {
+                Debug.Log($"Hiding animation for [{_complitedAnimationsCount}] elements completed");
+
                 OnCompleted.Invoke();
             }
         }

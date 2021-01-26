@@ -24,13 +24,6 @@ namespace Components
             _button.onClick.AddListener(ButtonOnClick);
 
             _buttonsHidingAnimationComponent = this.gameObject.transform.parent.gameObject.GetComponent<ButtonsHidingAnimationComponent>();
-
-            if (_buttonsHidingAnimationComponent == null)
-            {
-                return;
-            }
-
-            _buttonsHidingAnimationComponent.OnCompleted += DoTweenAnimationOnComplete;
         }
         private void OnDestroy()
         {
@@ -46,16 +39,22 @@ namespace Components
 
         private void ButtonOnClick()
         {
+            Debug.Log($"Click on button with timer model id [{_timerButtonView.TimerModel.Id}]");
+
             if (_buttonsHidingAnimationComponent == null)
             {
                 return;
             }
 
             _buttonsHidingAnimationComponent.PlayAnimation();
+
+            _buttonsHidingAnimationComponent.OnCompleted += DoTweenAnimationOnComplete;
         }
 
         private void DoTweenAnimationOnComplete()
         {
+            _buttonsHidingAnimationComponent.OnCompleted -= DoTweenAnimationOnComplete;
+
             GameManager.Instance.UserInterfaceManager.ShowTimerWindow(_timerButtonView.TimerModel);
         }
     }
